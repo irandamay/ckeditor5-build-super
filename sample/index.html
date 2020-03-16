@@ -40,23 +40,21 @@
 
 <script src="../build/ckeditor.js"></script>
 <script>
- CKEDITOR.ClassicEditor
-         .create( document.querySelector( '#classic-editor' ) )
-	 .then( editor => {
-	   window.editor = editor;
-	 } )
-	 .catch( err => {
-	   console.error( err.stack );
-	 } );
+	CKEDITOR.ClassicEditor.create( document.querySelector( '#classic-editor' ) )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( error => {
+			console.error( 'There was a problem initializing the editor.', error );
+		} );
 
-  CKEDITOR.InlineEditor
-         .create( document.querySelector( '#inline-editor' ) )
-	 .then( editor => {
-	   window.editor = editor;
-	 } )
-	 .catch( err => {
-	   console.error( err.stack );
-	 } );
+ 	CKEDITOR.InlineEditor.create( document.querySelector( '#inline-editor' ) )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( error => {
+			console.error( 'There was a problem initializing the editor.', error );
+		} );
 </script>
 
 </body>
